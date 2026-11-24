@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Missão Level Up! - Trajetória de Aprendizagem</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- MENU DE NAVEGAÇÃO FIXO ESTILO GAME HUD -->
+    <nav class="game-navbar" aria-label="Navegação Principal">
+        <div class="nav-wrapper">
+            <a href="index.html" class="nav-brand">
+                <span class="coin-icon">🪙</span>
+                <span class="brand-text">LEVEL<span class="highlight">UP!</span></span>
+            </a>
+
+            <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Abrir Menu" aria-expanded="false">
+                ☰
+            </button>
+
+            <ul class="nav-menu" id="nav-menu">
+                <li>
+                    <a href="index.html" class="nav-link">
+                        <span class="nav-cursor">▶</span> 01. PLAYERS (CARDS)
+                    </a>
+                </li>
+                <li>
+                    <a href="trajetoria.html" class="nav-link active">
+                        <span class="nav-cursor">▶</span> 02. WORLD MAP (TRAJETÓRIA)
+                    </a>
+                </li>
+            </ul>
+
+            <div class="nav-hud-status" title="XP Atual da Equipe">
+                <span class="hud-label">TEAM XP</span>
+                <span class="hud-value" id="nav-xp-display">120/300</span>
+            </div>
+        </div>
+    </nav>
+
+    <header class="main-header">
+        <h1>TRAJETÓRIA DE APRENDIZAGEM</h1>
+        <p class="subtitle">Jornada da Equipe • Autoria Web IFRN</p>
+    </header>
+
+    <main class="container">
+        <section class="journey-section">
+            <div class="section-header-flex">
+                <h2 class="section-title"><span>02</span> Mapa da Jornada (Grupo)</h2>
+                <button id="reset-progress-btn" class="btn-reset" title="Resetar fases concluídas">↺ Resetar XP</button>
+            </div>
+            <p class="journey-desc">Siga a sequência lógica de aprendizado. Clique nos níveis para acessar os materiais e ganhar +30 XP nos cards da equipe!</p>
+
+            <div class="world-map">
+                <div class="map-header">
+                    <span>WORLD 1-1</span>
+                    <span>DONUT PLAINS</span>
+                </div>
+
+                <div class="map-path">
+                    <svg class="path-connector" viewBox="0 0 1000 100" preserveAspectRatio="none" aria-hidden="true">
+                        <line x1="5%" y1="50%" x2="95%" y2="50%" stroke="#fbc531" stroke-width="4" stroke-dasharray="10, 10" />
+                    </svg>
+
+                    <div class="stage-node node-1" tabindex="0" role="button" aria-label="Fase 1: Fundamentos HTML" data-level="1" data-title="Fundamentos HTML" data-desc="Aprenda tags semânticas, elementos de bloco e linha, formulários e acessibilidade básica." data-link="https://developer.mozilla.org/pt-BR/docs/Learn/HTML">
+                        <div class="node-pipe">1</div>
+                        <span class="node-title">HTML5</span>
+                    </div>
+
+                    <div class="stage-node node-2" tabindex="0" role="button" aria-label="Fase 2: Estilização CSS" data-level="2" data-title="Estilização CSS" data-desc="Domine seletores, Flexbox, CSS Grid, variáveis e estilização moderna." data-link="https://developer.mozilla.org/pt-BR/docs/Learn/CSS">
+                        <div class="node-pipe">2</div>
+                        <span class="node-title">CSS3</span>
+                    </div>
+
+                    <div class="stage-node node-3" tabindex="0" role="button" aria-label="Fase 3: JavaScript Essencial" data-level="3" data-title="JavaScript Essencial" data-desc="Lógica de programação, variáveis, funções, eventos e manipulação do DOM." data-link="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript">
+                        <div class="node-pipe">3</div>
+                        <span class="node-title">JavaScript</span>
+                    </div>
+
+                    <div class="stage-node node-4" tabindex="0" role="button" aria-label="Fase 4: Design Responsivo" data-level="4" data-title="Design Responsivo" data-desc="Media queries, layouts fluidos e estratégias Mobile First para todas as telas." data-link="https://web.dev/learn/design/">
+                        <div class="node-pipe">4</div>
+                        <span class="node-title">Responsivo</span>
+                    </div>
+
+                    <div class="stage-node node-5" tabindex="0" role="button" aria-label="Fase 5: Acessibilidade Web" data-level="5" data-title="Acessibilidade Web" data-desc="Boas práticas de WCAG, leitores de tela e contraste de cores inclusivo." data-link="https://www.w3.org/WAI/fundamentals/accessibility-intro/pt">
+                        <div class="node-pipe">5</div>
+                        <span class="node-title">Acessibilidade</span>
+                    </div>
+
+                    <div class="stage-node node-6 boss-node" tabindex="0" role="button" aria-label="Fase 6: Revisão Final e Performance" data-level="6" data-title="Revisão Final & Performance" data-desc="Boas práticas de carregamento, minificação de código e SEO para revisão final." data-link="https://web.dev/fast/">
+                        <div class="node-castle">🏰</div>
+                        <span class="node-title">Revisão</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2026 Projeto Missão Level Up - Autoria Web • IFRN.</p>
+    </footer>
+
+    <!-- MODAL DAS FASES -->
+    <div id="stage-modal" class="modal-overlay" aria-hidden="true" role="dialog" aria-labelledby="modal-title">
+        <div class="modal-card">
+            <button id="close-modal-btn" class="modal-close" aria-label="Fechar Modal">&times;</button>
+            <div class="modal-header">
+                <span id="modal-level-num" class="modal-level-badge">FASE 1</span>
+                <h3 id="modal-title">Título da Fase</h3>
+            </div>
+            <p id="modal-desc">Descrição detalhada do conteúdo que será aprendido nesta etapa da disciplina.</p>
+            <div class="modal-actions">
+                <a id="modal-link" href="https://developer.mozilla.org/pt-BR/docs/Learn/HTML" target="_blank" rel="noopener noreferrer" class="btn-primary">Acessar Material 🚀</a>
+                <button id="complete-stage-btn" class="btn-secondary">Concluir Fase (+30 XP)</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
